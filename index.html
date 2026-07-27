@@ -1,45 +1,170 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yasmin Sherefa | Home </title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yasmin Sherefa | Home</title>
 
-    <link rel="stylesheet" href="style.css">
-    
+  <link rel="stylesheet" href="output.css">
+
+  <script>
+    if (localStorage.getItem("theme") === "dark") {
+      document.documentElement.classList.add("dark");
+    }
+  </script>
 </head>
-<body>
-   <header class="header" >
-    <h1> Yasmin Sherefa </h1>
 
-    <nav class="nav">
-       <a href="index.html">Home</a>  
-       <a href="projects.html">Projects</a> 
-       <a href="contact.html">Contact</a> 
-    </nav>
+<body class="bg-blue-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200 transition-colors duration-300">
 
-   </header> 
+  <!-- Header -->
+  <header class="bg-white dark:bg-gray-800 shadow border-b border-gray-200 dark:border-gray-700">
 
-   <main>
-    <article>
-        <section>
-            
-            <h2>About Me</h2>
-            <p>
-             I am a future computer engineer passionate about building technology that solves real-world problems. 
-             I am currently exploring full-stack web development, UI/UX design, and AI to bring practical ideas to life.
-             My goal is to grow into a confident engineer and inspire more women to enter tech while building a future where I can travel and create impact, Inshallah.
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center px-8 py-6">
 
-            </p>
-        </section>
-        <section>
-            <h2> Skills</h2>
-             Loading......😁
-        </section>
-    </article>
-   </main>
-   <footer>
-    <p>&copy; 2026 Yasmin Sherefa. All Rights Reserved.</p>
+      <h1 class="text-[clamp(2rem,5vw,4rem)] font-bold text-gray-900 dark:text-white">
+        Yasmin Sherefa
+      </h1>
+
+      <nav class="flex gap-8 mt-5 md:mt-0">
+
+        <a href="index.html"
+          class="text-red-600 font-semibold hover:text-red-700 hover:underline transition">
+          Home
+        </a>
+
+        <a href="projects.html"
+          class="text-red-600 font-semibold hover:text-red-700 hover:underline transition">
+          Projects
+        </a>
+
+        <a href="contact.html"
+          class="text-red-600 font-semibold hover:text-red-700 hover:underline transition">
+          Contact
+        </a>
+
+      </nav>
+
+      <button id="theme-toggle"
+        class="mt-5 md:mt-0 bg-red-600 hover:bg-red-700 text-white px-5 py-2 rounded-lg font-semibold transition">
+        🌙 Dark Mode
+      </button>
+
+    </div>
+
+  </header>
+
+  <!-- Main -->
+  <main class="max-w-5xl mx-auto px-6 py-10 space-y-8">
+
+    <!-- About -->
+    <section
+      class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 hover:shadow-xl transition">
+
+      <h2 class="text-3xl font-bold mb-6 dark:text-white">
+        About Me
+      </h2>
+
+      <p class="text-lg leading-9 text-gray-700 dark:text-gray-300">
+
+        I am a future computer engineer passionate about building technology that
+        solves real-world problems.
+
+        I am currently exploring
+
+        <span class="font-semibold text-red-600">Full-Stack Web Development</span>,
+        <span class="font-semibold text-red-600">UI/UX Design</span>,
+        and
+        <span class="font-semibold text-red-600">Artificial Intelligence</span>
+
+        to bring practical ideas to life.
+
+        <br><br>
+
+        My goal is to grow into a confident engineer, inspire more women to
+        enter technology, and build a future where I can create meaningful
+        impact while exploring the world, Inshallah.
+
+      </p>
+
+    </section>
+
+    <!-- Skills -->
+    <section
+      class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 hover:shadow-xl transition">
+
+      <h2 class="text-3xl font-bold mb-6 dark:text-white">
+        Skills
+      </h2>
+
+      <div class="flex flex-wrap gap-4">
+
+        <span class="bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-200 px-4 py-2 rounded-full font-semibold">
+          HTML5
+        </span>
+
+        <span class="bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-200 px-4 py-2 rounded-full font-semibold">
+          CSS3
+        </span>
+
+        <span class="bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-200 px-4 py-2 rounded-full font-semibold">
+          Responsive Design
+        </span>
+
+        <span class="bg-yellow-100 dark:bg-yellow-900 text-yellow-700 dark:text-yellow-200 px-4 py-2 rounded-full font-semibold">
+          Git & GitHub
+        </span>
+
+        <span class="bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-200 px-4 py-2 rounded-full font-semibold">
+          Tailwind CSS
+        </span>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer
+    class="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 py-6">
+
+    <p class="text-center text-gray-600 dark:text-gray-400">
+      &copy; 2026 Yasmin Sherefa. All Rights Reserved.
+    </p>
+
   </footer>
+
+  <script>
+
+    const button = document.getElementById("theme-toggle");
+
+    function updateButton() {
+      if (document.documentElement.classList.contains("dark")) {
+        button.textContent = "☀️ Light Mode";
+      } else {
+        button.textContent = "🌙 Dark Mode";
+      }
+    }
+
+    updateButton();
+
+    button.addEventListener("click", () => {
+
+      document.documentElement.classList.toggle("dark");
+
+      if (document.documentElement.classList.contains("dark")) {
+        localStorage.setItem("theme", "dark");
+      } else {
+        localStorage.setItem("theme", "light");
+      }
+
+      updateButton();
+
+    });
+
+  </script>
+
 </body>
+
 </html>
